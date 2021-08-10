@@ -1,0 +1,12 @@
+{
+    "name": "dynamicLink",
+    "public": true,
+    "version": 2,
+    "builds": [
+        { "src": "index.js", "use": "@now/node" }
+    ],
+    "routes": [
+        { "src": "/g1", "dest": "index.js" },
+        { "src": "/g1/update", "dest": "index.js" }
+    ]
+}

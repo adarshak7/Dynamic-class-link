@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<title>Dynamic Link</title>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+        html,
+        body {
+            display: flex;
+            justify-content: center;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 15px;
+            color: #100055;
+        }
+        
+        form {
+            border: 5px solid #034f84;
+            background-color: #fdfcfc;
+        }
+        
+        input {
+            width: 100%;
+            padding: 16px 8px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid rgb(30, 1, 99);
+            box-sizing: border-box;
+        }
+        /* button {
+            background-color: #275aaa;
+            color: white;
+            padding: 14px 0;
+            margin: 10px 0;
+            border: none;
+            cursor: grab;
+            width: 48%;
+        } */
+        
+        h1 {
+            text-align: center;
+            font-size: 18;
+        }
+        /* button:hover {
+            opacity: 0.8;
+        } */
+        
+        .formcontainer {
+            text-align: center;
+            margin: 24px 50px 12px;
+        }
+        
+        .container {
+            padding: 16px 0;
+            text-align: left;
+        }
+        
+        .popup {
+            background-color: #f7786b;
+            color: white;
+            padding: 14px 0;
+            margin: 10px 0;
+            border: none;
+            cursor: grab;
+            width: 48%;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .popup:hover {
+            opacity: 0.8;
+        }
+        /* The actual popup (appears on top) */
+        
+        .popup .popuptext {
+            visibility: hidden;
+            width: 160px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+        }
+        /* Popup arrow */
+        
+        .popup .popuptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgb(197, 39, 39) transparent transparent transparent;
+        }
+        /* Toggle this class when clicking on the popup container (hide and show the popup) */
+        
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s
+        }
+        /* Add animation (fade in the popup) */
+        
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/g1/update" method="POST">
+        <h1>CLASS UPDATER</h1>
+
+        <div class="formcontainer">
+            <div class="container">
+                <label for="day"><strong>Day</strong></label>
+                <input type="text" placeholder="Enter Day" name="day" required>
+                <label for="hour"><strong>Hour</strong></label>
+                <input type="text" placeholder="Enter Hour" name="hour" required>
+                <label for="link"><strong>Classlink</strong></label>
+                <input type="text" placeholder="Enter link" name="classLink" required>
+            </div>
+            <div class="popup" onclick="myFunction()">SUBMIT
+                <span class="popuptext" id="myPopup">Updated</span>
+            </div>
+            <!-- <div class="popup" onclick="popups()">
+                <span class="Submit" id="submit-btn"></span>
+            </div> -->
+            <!-- <button id="submit-btn" type="submit"><strong>SUBMIT</strong></button> -->
+    </form>
+    <script>
+        // When the user clicks on <div>, open the popup
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>
